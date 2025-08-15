@@ -1,25 +1,26 @@
+
 #include <iostream>
-#include <cmath>
+#include <string>
 using namespace std;
 
 int main() {
-    int a;
+    string b;
     cout << "Enter binary number: ";
-    cin >> a;
-    int x = 0, base = 1, rem;
-    int temp = a;
+    cin >> b;
 
-    while (temp > 0) {
-        rem = temp % 10;
-        if (rem == 1 || rem == 0) {
-            x += rem * base;
-            base *= 2;
-        } else {
+    // Validate input
+    for (char c : b) {
+        if (c != '0' && c != '1') {
             cout << "Invalid input: Not a binary number" << endl;
             return 0;
         }
-        temp /= 10;
     }
-    cout << "Decimal number is: " << x << endl;
+
+    // Convert to decimal
+    long long decimal = 0;
+    for (char c : b) {
+        decimal = decimal * 2 + (c - '0');
+    }
+    cout << "Decimal number is: " << decimal << endl;
     return 0;
 }

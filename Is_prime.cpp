@@ -9,6 +9,9 @@ int main(){
             cout<<"Not Prime";
             break;
         }
+        else if(N%i !=0){
+                break;
+        }
         else{
             cout<<"Prime";
             break;
