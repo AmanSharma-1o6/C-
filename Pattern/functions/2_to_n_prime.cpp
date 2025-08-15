@@ -25,7 +25,9 @@ void print_prime(int n){
 
 
 
-int main(){
-    print_prime(13);
+int main(){\
+    int n;
+    cin>>n;
+    print_prime(n);
     return 0;
 }
