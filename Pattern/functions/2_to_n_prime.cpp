@@ -18,7 +18,7 @@ bool is_prime(int n){
 void print_prime(int n){
     for(int N = 2 ; N <= n ; N++){
         if( is_prime(N)){
-            cout << N << " ";
+            cout << N << endl;
         }
     }
 }
