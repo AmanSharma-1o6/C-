@@ -27,6 +27,17 @@ long binary_to_decimal(long n){
 }
 
 int main(){
-    cout<<binary_to_decimal(1111)<<endl;
+    int a = 4, b = 8;
+    cout<<decimal_to_binary(4)<<endl;
+    cout<<binary_to_decimal(1010)<<endl;
+    cout<<(a&b)<<endl;
+    cout<<(a|b)<<endl;
+    cout<<(a^b)<<endl;
+    cout<<(a<<1)<<endl;
+    cout<<(a>>1)<<endl;
+    cout<<sizeof(int)<<endl;
+    cout<<sizeof(long int)<<endl;
+    cout<<sizeof(long long int)<<endl;
+    cout<<sizeof(short int)<<endl; 
     return 0;
 }
