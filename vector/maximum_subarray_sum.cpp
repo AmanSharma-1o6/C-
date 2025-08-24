@@ -43,12 +43,26 @@ vector<int> arr_of_sum_of_subbarrys(int arr[], int size){
 
 // Prints the maximum subarray sum (brute force approach)
 void max_sum_array(int arr[], int size){
-    vector<int> v = arr_of_sum_of_subbarrys(arr, size);
-    int lar = INT_MIN;
-    for(int i = 0 ; i < v.size() ; i++){
-        lar = max(v[i], lar);
+    int maxsum = INT_MIN ; 
+    for(int st = 0; st < size ; st++){
+        int cursum = 0;
+        for(int end = st ; end < size ; end++){
+            cursum += arr[end];
+            maxsum = max(maxsum, cursum);
+        }
     }
-    cout << lar << endl;
+    cout << maxsum << endl;
+}
+
+void k_algo(int arr[], int size){
+    int maxsum = INT_MIN;
+    int cursum = 0;
+    for(int i = 0; i < size; i++){
+         cursum += arr[i];
+        if(cursum < 0) cursum = 0;
+        maxsum = max(maxsum, cursum);
+    }
+    cout << maxsum << endl;
 }
 
 int main(){
@@ -57,8 +71,13 @@ int main(){
     cout << "Subarrays : " << size * (size + 1) / 2 << endl;
     subarrays(arr, size);
     cout << "Sum of subarrays" << endl;
-    sum_subarrays(arr, size);
+    vector <int> v = arr_of_sum_of_subbarrys(arr, size);
+    for( int i = 0 ; i < size*(size+1)/2 ; i++){
+        cout << v[i] << " ";
+    }
+    cout<<endl;
     cout << "max_sum" << endl;
     max_sum_array(arr, size);
+    k_algo(arr, size);
     return 0;
 }
